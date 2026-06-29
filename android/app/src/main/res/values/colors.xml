@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ── Background / Surface ── -->
+    <color name="bg_dark">#0D0F14</color>
+    <color name="surface_dark">#161A23</color>
+    <color name="card_gradient_start">#1E2535</color>
+    <color name="overlay_dark">#99000000</color>
+
+    <!-- ── Brand ── -->
+    <color name="accent_teal">#00D4B4</color>
+    <color name="accent_blue">#3D7EFF</color>
+    <color name="accent_purple">#A855F7</color>
+
+    <!-- ── Typography ── -->
+    <color name="white">#FFFFFF</color>
+    <color name="text_secondary">#8A93A8</color>
+
+    <!-- ── Navigation ── -->
+    <color name="nav_item_selected">#00D4B4</color>
+    <color name="nav_item_unselected">#4A5568</color>
+</resources>

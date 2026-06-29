@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtualenvs
+.venv/
+venv/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# Data and model artifacts (large, not source)
+data/*
+!data/README.md
+checkpoints/
+runs/
+weights/
+wandb/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# Notebook outputs (keep notebooks small in git)
+.ipynb_checkpoints/
+
+# Scratch notebooks
+notebooks/scratch/
+
+# Local env overrides
+.env
+.env.local
+
+# Local-only notes
+NOTES.local.md
+.claude/settings.local.json
+.wrangler/
+*.mp4
+runpod_setup.sh
+
+# Android and Unity Build Artifacts - ALL build outputs
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/unityLibrary/build/
+android/unityLibrary/unityLibrary/.cxx/
+android/unityLibrary/unityLibrary/build/
+android/unityLibrary/unityLibrary/src/main/Il2CppOutputProject/
+android/unityLibrary/unityLibrary/src/main/assets/
+android/unityLibrary/unityLibrary/xrmanifest.androidlib/build/
+unity/Library/
+unity/Temp/
+unity/Obj/
+unity/Build/
+unity/Builds/
+unity/Logs/
+unity/UserSettings/
+*.apk
+*.aab
+
+# Large binary shared libraries (Unity output - hundreds of MB each)
+*.so
+*.so.*
+*.a
+*.dylib

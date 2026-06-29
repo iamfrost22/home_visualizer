@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Network – talk to FastAPI server on LAN -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Camera – scanning floor plan -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+
+    <!-- AR Core / AR Foundation -->
+    <uses-feature android:name="android.hardware.camera.ar" android:required="false"/>
+
+    <application
+        android:name=".FloorPlan3DApp"
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.FloorPlan3D"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup,android:theme,android:label"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <!-- Splash / onboarding (Disabled since we use Jetpack Compose MainActivity) -->
+        <!-- Main shell (bottom-nav) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Full-screen AR/Unity scanning surface -->
+        <activity
+            android:name=".ui.scanner.ScannerActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"/>
+
+        <!-- AR Core optional feature declaration -->
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="optional"
+            tools:replace="android:value"/>
+
+    </application>
+</manifest>
