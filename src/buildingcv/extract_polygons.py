@@ -29,7 +29,12 @@ from typing import TypedDict
 
 import cv2
 import numpy as np
+import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
 import torch
+torch.set_num_threads(1)
+torch.set_grad_enabled(False)
 import yaml
 from PIL import Image, ImageDraw
 
@@ -216,6 +221,7 @@ class PolygonExtractor:
         ).to(self.device)
         state, self.epoch = load_inference_checkpoint(ckpt_path, self.device)
         self.model.load_state_dict(state)
+        del state  # Free memory explicitly
         self.model.eval()
 
     @torch.no_grad()
